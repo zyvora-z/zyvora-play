@@ -1,0 +1,597 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f3ff">
+<meta name="description" content="ZYVORA PLAY؛ دنیای بازی‌های آنلاین، سرگرمی‌های عجیب و چالش‌های جذاب.">
+<title>ZYVORA PLAY | دنیای بازی و سرگرمی</title>
+
+<script>
+!function(e,t,n){
+    e.yektanetAnalyticsObject=n,
+    e[n]=e[n]||function(){e[n].q.push(arguments)},
+    e[n].q=e[n].q||[];
+    var a=t.getElementsByTagName("head")[0],
+        r=new Date,
+        c="https://cdn.yektanet.ir/superscript-v2/zHD95I3p/native-49018/yn_pub.js?v="
+            +r.getFullYear().toString()+"0"+r.getMonth()+"0"+r.getDate()+"0"+r.getHours(),
+        s=t.createElement("link");
+    s.rel="preload",s.as="script",s.href=c,a.appendChild(s);
+    var l=t.createElement("script");
+    l.async=!0,l.src=c,a.appendChild(l);
+}(window,document,"yektanet");
+</script>
+
+<style>
+:root{
+ --bg:#f5f3ff;--card:#fff;--soft:#eeeaff;
+ --text:#211b35;--muted:#777087;--line:#e7e1f3;
+ --main:#704cff;--pink:#ff69ae;--cyan:#21b9d0;
+ --shadow:0 8px 30px #39266c12;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif}
+button,input{font:inherit}
+button{cursor:pointer}
+header{
+ position:sticky;top:0;z-index:10;background:var(--card);
+ border-bottom:1px solid var(--line);padding:12px 5%;
+ display:flex;align-items:center;justify-content:space-between;gap:12px
+}
+.logo{font-size:21px;font-weight:900;color:var(--main);letter-spacing:1px}
+.logo span{color:var(--pink)}
+.header-actions{display:flex;gap:8px}
+.icon-btn{border:1px solid var(--line);background:var(--soft);color:var(--text);padding:10px 13px;border-radius:12px}
+.hero{
+ padding:65px 20px 45px;text-align:center;
+ background:radial-gradient(circle at 15% 20%,#a78bfa40,transparent 35%),radial-gradient(circle at 85% 50%,#ff69ae25,transparent 30%)
+}
+.hero h1{font-size:clamp(30px,6vw,54px);margin:0 0 15px}
+.hero h1 span{color:var(--main)}
+.hero p{color:var(--muted);line-height:2}
+.hero-btn{background:var(--main);color:white;border:0;border-radius:14px;padding:14px 28px;font-weight:bold;margin-top:15px}
+.stats{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 20px;min-width:100px}
+.stat b{display:block;color:var(--main);font-size:21px;margin-bottom:5px}
+.stat small{color:var(--muted)}
+.ad-slot{
+ max-width:900px;min-height:70px;margin:24px auto;padding:12px;
+ border:1px solid var(--line);border-radius:13px;background:var(--card);
+ text-align:center;overflow:hidden
+}
+.ad-label{display:block;color:var(--muted);font-size:10px;margin-bottom:8px}
+.ad-slot>div{max-width:100%;margin:auto}
+.container{max-width:1150px;margin:auto;padding:20px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:35px 0 18px}
+.section-head h2{font-size:22px;margin:0}
+.search{width:100%;padding:14px 17px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--text);outline:none;margin-bottom:17px}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:4px 0 15px}
+.filter{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--text);padding:10px 15px;border-radius:30px}
+.filter.active{background:var(--main);color:white;border-color:var(--main)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:13px}
+.item{border:1px solid var(--line);background:var(--card);border-radius:18px;padding:17px 12px;text-align:center;transition:.2s;box-shadow:var(--shadow);min-height:150px}
+.item:hover{transform:translateY(-4px);border-color:var(--main)}
+.emoji{font-size:34px;margin-bottom:10px}
+.item h3{font-size:14px;margin:5px 0 9px}
+.item p{font-size:11px;color:var(--muted);margin:0 0 12px;line-height:1.8}
+.item button{background:var(--soft);color:var(--main);border:0;padding:9px 16px;border-radius:10px;font-size:12px;font-weight:bold}
+.item button:hover{background:var(--main);color:white}
+.panel{display:none;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;margin:25px 0;box-shadow:var(--shadow);text-align:center;scroll-margin-top:90px}
+.panel.show{display:block}
+.panel h2{margin-top:5px}
+.close{float:left;background:var(--soft);color:var(--text);border:0;padding:8px 13px;border-radius:10px}
+.game-area{max-width:500px;margin:25px auto;min-height:170px}
+.game-area button,.action{background:var(--main);color:white;border:0;border-radius:11px;padding:12px 18px;margin:5px;font-weight:bold}
+.game-area input{background:var(--soft);border:1px solid var(--line);color:var(--text);padding:12px;border-radius:10px;width:100%;margin:10px 0}
+.result{padding:15px;background:var(--soft);border-radius:12px;margin:15px 0;line-height:2}
+.big{font-size:42px;margin:15px}
+.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.memory-grid button{font-size:25px;min-height:65px;background:var(--soft);color:var(--text);border:1px solid var(--line);border-radius:12px;margin:0;padding:5px}
+.memory-grid button.open{background:var(--main);color:white}
+.board{display:grid;grid-template-columns:repeat(3,1fr);max-width:270px;margin:auto;gap:7px}
+.board button{height:75px;font-size:28px;background:var(--soft);color:var(--text);border:1px solid var(--line);border-radius:12px;margin:0}
+footer{text-align:center;padding:35px 15px;color:var(--muted);border-top:1px solid var(--line);margin-top:40px;font-size:13px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--text);color:white;padding:12px 20px;border-radius:12px;z-index:30;display:none}
+@media(max-width:550px){
+ header{padding:11px 4%}.logo{font-size:17px}
+ .hero{padding:48px 15px 35px}
+ .container{padding:14px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .item{padding:14px 8px}
+ .section-head h2{font-size:19px}
+ .ad-slot{margin:20px 8px;padding:10px}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="logo">ZYVORA <span>PLAY</span></div>
+ <div class="header-actions">
+  <button class="icon-btn" onclick="scrollToId('games')">🎮 بازی‌ها</button>
+ </div>
+</header>
+
+<section class="hero">
+ <h1>دنیای <span>سرگرمی</span> تو!</h1>
+ <p>بازی کن، بخند، رکورد بزن و حوصله‌ات رو نجات بده!</p>
+ <button class="hero-btn" onclick="scrollToId('games')">شروع سرگرمی ←</button>
+ <div class="stats">
+  <div class="stat"><b>۳۰</b><small>بازی آنلاین</small></div>
+  <div class="stat"><b>۳۰</b><small>سرگرمی</small></div>
+  <div class="stat"><b id="played">۰</b><small>بازی انجام‌شده</small></div>
+ </div>
+</section>
+
+<main class="container">
+
+<div class="ad-slot">
+ <span class="ad-label">تبلیغات</span>
+ <div id="pos-article-text-card-124308"></div>
+</div>
+
+<div class="section-head">
+ <h2>🔥 چالش روزانه</h2>
+ <span id="dailyDate" style="color:var(--muted);font-size:12px"></span>
+</div>
+<div class="item" style="min-height:auto">
+ <div class="emoji">⚡</div>
+ <h3>چالش سرعت واکنش</h3>
+ <p>ببین چقدر سریع می‌تونی واکنش نشون بدی!</p>
+ <button onclick="startGame(4)">شروع چالش</button>
+</div>
+
+<section id="games">
+ <div class="section-head">
+  <h2>🎮 بازی‌های آنلاین</h2>
+  <span id="gameCount" style="color:var(--muted);font-size:12px"></span>
+ </div>
+ <input class="search" id="gameSearch" placeholder="🔍 جست‌وجوی بازی..." oninput="renderGames()">
+ <div class="filters" id="gameFilters"></div>
+ <div class="grid" id="gameGrid"></div>
+</section>
+
+<div class="ad-slot">
+ <span class="ad-label">تبلیغات</span>
+ <div id="pos-article-display-124309"></div>
+</div>
+
+<section id="fun">
+ <div class="section-head">
+  <h2>😂 سرگرمی‌های عجیب و جالب</h2>
+  <span style="color:var(--muted);font-size:12px">۳۰ سرگرمی</span>
+ </div>
+ <input class="search" id="funSearch" placeholder="🔍 جست‌وجوی سرگرمی..." oninput="renderFun()">
+ <div class="grid" id="funGrid"></div>
+</section>
+
+<div id="panel" class="panel">
+ <button class="close" onclick="closePanel()">✕ بستن</button>
+ <div style="clear:both"></div>
+ <h2 id="panelTitle"></h2>
+ <div class="game-area" id="gameArea"></div>
+</div>
+
+<div class="ad-slot">
+ <span class="ad-label">تبلیغات</span>
+ <div id="pos-article-text-124310"></div>
+</div>
+
+<section>
+ <div class="section-head"><h2>🏆 آمار تو</h2></div>
+ <div class="stats">
+  <div class="stat"><b id="totalPlayed">۰</b><small>بازی انجام‌شده</small></div>
+  <div class="stat"><b id="bestScore">۰</b><small>بهترین امتیاز</small></div>
+ </div>
+ <div style="text-align:center;margin-top:15px">
+  <button class="filter" onclick="resetStats()">پاک کردن آمار</button>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="logo">ZYVORA <span>PLAY</span></div>
+ <p>بازی کن، لذت ببر، دوباره برگرد!</p>
+ <p>© 2026 ZYVORA PLAY. All rights reserved.</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const games=[
+["حدس عدد","🔢","عدد مخفی رو پیدا کن","فکری"],
+["سنگ کاغذ قیچی","✊","با کامپیوتر رقابت کن","دوئل"],
+["دوز","⭕","کامپیوتر رو شکست بده","فکری"],
+["حافظه تصویری","🧠","جفت تصاویر مشابه رو پیدا کن","فکری"],
+["واکنش سریع","⚡","سرعت واکنشت رو بسنج","سرعت"],
+["تاس","🎲","تاس بنداز و شانس خودت رو امتحان کن","شانسی"],
+["شیر یا خط","🪙","یکی رو انتخاب کن","شانسی"],
+["محاسبات سریع","➕","جواب محاسبات رو پیدا کن","فکری"],
+["حدس رنگ","🎨","رنگ درست رو انتخاب کن","فکری"],
+["تایپ سریع","⌨️","متن رو سریع تایپ کن","سرعت"],
+["بالاتر یا پایین‌تر","📈","عدد بعدی رو حدس بزن","شانسی"],
+["انتخاب دروازه","🚪","دروازه درست رو پیدا کن","شانسی"],
+["تکرار دنباله","🔁","دنباله اعداد رو حفظ کن","فکری"],
+["شکار هدف","🎯","هدف‌ها رو پیدا کن","سرعت"],
+["شمارش سریع","🔍","تعداد شکل‌ها رو حدس بزن","فکری"],
+["حدس ایموجی","😎","معنی ترکیب ایموجی رو حدس بزن","فکری"],
+["پازل کلمه","🔤","کلمه به‌هم‌ریخته رو مرتب کن","فکری"],
+["بازی شانس","🍀","یک عدد خوش‌شانس انتخاب کن","شانسی"],
+["سکه‌پرانی","🪙","نتیجه سکه رو پیش‌بینی کن","شانسی"],
+["توپ خیالی","🏀","عدد هدف رو پیدا کن","شانسی"],
+["آزمون تمرکز","👀","به سؤال‌ها سریع جواب بده","سرعت"],
+["جمع اعداد","🧮","مجموع اعداد رو پیدا کن","فکری"],
+["حدس حروف","🔠","حرف مخفی رو پیدا کن","فکری"],
+["انتخاب تصادفی","🎰","یک انتخاب شانسی داشته باش","شانسی"],
+["بازی حافظه عددی","🔢","اعداد رو به خاطر بسپار","فکری"],
+["مسابقه سرعت","🏁","هرچه سریع‌تر کلیک کن","سرعت"],
+["شکار ستاره","⭐","امتیاز جمع کن","سرعت"],
+["پیدا کردن متفاوت","🧐","شکل متفاوت رو پیدا کن","فکری"],
+["پیش‌بینی عدد","🔮","نتیجه رو پیش‌بینی کن","شانسی"],
+["چالش هوش","💡","سؤال هوشی رو حل کن","فکری"]
+];
+
+const funs=[
+["تست شخصیت","🧬","شخصیت سرگرم‌کننده‌ات رو کشف کن","personality"],
+["حقیقت یا جرئت","🔥","یک چالش انتخاب کن","truth"],
+["اگر نامرئی بودی؟","👻","یک سناریوی عجیب","scenario"],
+["انتخاب غیرممکن","⚔️","بین دو گزینه انتخاب کن","choice"],
+["اسم عجیب ساز","🤪","یک اسم خنده‌دار بساز","name"],
+["فال کاملاً شانسی","🔮","یک پیام تصادفی","fortune"],
+["شانس امروز","🍀","شانس خودت رو امتحان کن","luck"],
+["شغل آینده","💼","یک شغل تصادفی بگیر","job"],
+["سیاره شخصی","🪐","سیاره خیالی تو کجاست؟","planet"],
+["قدرت ابرقهرمانی","🦸","قدرت مخصوص خودت رو پیدا کن","power"],
+["غذای عجیب","🍕","ترکیب غذایی عجیب","food"],
+["حیوان درونت","🐺","حیوان شخصیت تو","animal"],
+["اسم گروه","🎸","اسم گروه دوستانه بساز","group"],
+["بهترین بهانه","😂","یک بهانه بامزه","excuse"],
+["ماشین زمان","⏳","به کدام زمان می‌روی؟","time"],
+["انتخاب دوست","👥","یک انتخاب سخت","friend"],
+["زندگی در مریخ","🚀","سناریوی زندگی فضایی","mars"],
+["قدرت ذهنی","🧠","یک قدرت ذهنی تصادفی","mind"],
+["تست ریسک","🎲","چقدر اهل ریسکی؟","risk"],
+["اسم مستعار","😎","لقب جدیدت رو بساز","nickname"],
+["اتاق رؤیایی","🏠","اتاق خیالی تو","room"],
+["جزیره متروکه","🏝️","چه چیزی همراه می‌بری؟","island"],
+["قهرمان فیلم","🎬","نقش تو در فیلم","movie"],
+["رنگ شخصیت","🌈","رنگ مخصوص تو","color"],
+["قدرت جادویی","✨","جادوی اختصاصی","magic"],
+["سفر خیالی","✈️","مقصد تصادفی","travel"],
+["موجود افسانه‌ای","🐉","موجود خیالی تو","creature"],
+["تست بامزه","🤣","یک سؤال غیرمنتظره","funny"],
+["اسم ربات","🤖","نام یک ربات بساز","robot"],
+["تصمیم تصادفی","🎯","تصمیم امروزت رو بسپار به شانس","decision"]
+];
+
+let currentFilter="همه";
+let gameTimer=null;
+let reactionTimeout=null;
+let stats=JSON.parse(localStorage.getItem("zp_stats")||'{"played":0,"best":0}');
+const fa=n=>Number(n).toLocaleString("fa-IR");
+
+function saveStats(){
+ localStorage.setItem("zp_stats",JSON.stringify(stats));
+ updateStats();
+}
+function updateStats(){
+ document.getElementById("played").textContent=fa(stats.played);
+ document.getElementById("totalPlayed").textContent=fa(stats.played);
+ document.getElementById("bestScore").textContent=fa(stats.best);
+}
+function addPlayed(points=0){
+ stats.played++;
+ stats.best=Math.max(stats.best,points);
+ saveStats();
+}
+function toast(msg){
+ const t=document.getElementById("toast");
+ t.textContent=msg;t.style.display="block";
+ setTimeout(()=>t.style.display="none",2200);
+}
+function scrollToId(id){
+ document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+function renderFilters(){
+ const filters=["همه","فکری","سرعت","شانسی","دوئل"];
+ document.getElementById("gameFilters").innerHTML=filters.map(f=>
+ `<button class="filter ${currentFilter===f?"active":""}" onclick="setFilter('${f}')">${f}</button>`
+ ).join("");
+}
+function setFilter(f){currentFilter=f;renderFilters();renderGames()}
+function renderGames(){
+ const q=document.getElementById("gameSearch").value.trim().toLowerCase();
+ const filtered=games.map((g,i)=>({g,i})).filter(x=>
+ (currentFilter==="همه"||x.g[3]===currentFilter)&&
+ (x.g[0]+" "+x.g[2]).toLowerCase().includes(q)
+ );
+ document.getElementById("gameCount").textContent=fa(filtered.length)+" بازی";
+ document.getElementById("gameGrid").innerHTML=filtered.map(x=>`
+ <div class="item">
+ <div class="emoji">${x.g[1]}</div>
+ <h3>${x.g[0]}</h3><p>${x.g[2]}</p>
+ <button onclick="startGame(${x.i})">بازی کن</button>
+ </div>`).join("")||"<p>چیزی پیدا نشد.</p>";
+}
+function renderFun(){
+ const q=document.getElementById("funSearch").value.trim().toLowerCase();
+ const list=funs.map((f,i)=>({f,i})).filter(x=>
+ (x.f[0]+" "+x.f[2]).toLowerCase().includes(q)
+ );
+ document.getElementById("funGrid").innerHTML=list.map(x=>`
+ <div class="item">
+ <div class="emoji">${x.f[1]}</div><h3>${x.f[0]}</h3>
+ <p>${x.f[2]}</p><button onclick="openFun(${x.i})">امتحان کن</button>
+ </div>`).join("")||"<p>چیزی پیدا نشد.</p>";
+}
+renderFilters();renderGames();renderFun();updateStats();
+document.getElementById("dailyDate").textContent=new Date().toLocaleDateString("fa-IR");
+
+function openPanel(title,html){
+ clearTimeout(gameTimer);clearTimeout(reactionTimeout);
+ document.getElementById("panelTitle").textContent=title;
+ document.getElementById("gameArea").innerHTML=html;
+ document.getElementById("panel").classList.add("show");
+ document.getElementById("panel").scrollIntoView({behavior:"smooth",block:"center"});
+}
+function closePanel(){
+ clearTimeout(gameTimer);clearTimeout(reactionTimeout);
+ document.getElementById("panel").classList.remove("show");
+}
+window.activeGame=0;
+window.gameFinished=false;
+function finish(points=0,msg="بازی تمام شد!"){
+ if(window.gameFinished)return;
+ window.gameFinished=true;
+ addPlayed(points);
+ document.getElementById("gameArea").innerHTML+=`
+ <div class="result">🏁 ${msg}<br>امتیاز: ${fa(points)}</div>
+ <button class="action" onclick="startGame(${window.activeGame||0})">دوباره بازی کن</button>`;
+}
+function startGame(i){
+ window.activeGame=i;window.gameFinished=false;
+ const g=games[i];
+ openPanel(g[1]+" "+g[0],"<p>در حال آماده‌سازی...</p>");
+ switch(i%10){
+ case 0:guessGame();break;
+ case 1:rpsGame();break;
+ case 2:ticGame();break;
+ case 3:memoryGame();break;
+ case 4:reactionGame();break;
+ case 5:diceGame();break;
+ case 6:coinGame();break;
+ case 7:mathGame();break;
+ case 8:colorGame();break;
+ case 9:typingGame();break;
+ }
+}
+function guessGame(){
+ let secret=Math.floor(Math.random()*100)+1,tries=0;
+ document.getElementById("gameArea").innerHTML=`
+ <p>یک عدد بین ۱ تا ۱۰۰ حدس بزن!</p>
+ <input id="guessInput" type="number" min="1" max="100" placeholder="عدد تو...">
+ <button onclick="checkGuess()">بررسی</button>
+ <div id="guessResult" class="result">منتظر حدس تو هستم!</div>`;
+ window.checkGuess=()=>{
+ if(window.gameFinished)return;
+ let v=Number(document.getElementById("guessInput").value);
+ if(!v||v<1||v>100){toast("عدد بین ۱ تا ۱۰۰ وارد کن");return}
+ tries++;
+ if(v===secret){
+ document.getElementById("guessResult").textContent="آفرین! درست حدس زدی.";
+ finish(Math.max(0,100-tries*5),"عدد مخفی را پیدا کردی!");
+ }else document.getElementById("guessResult").textContent=v<secret?"بالاتر برو!":"پایین‌تر بیا!";
+ };
+}
+function rpsGame(){
+ document.getElementById("gameArea").innerHTML=`
+ <p>انتخاب کن:</p>
+ ${["سنگ","کاغذ","قیچی"].map((v,i)=>`<button onclick="playRPS(${i})">${["✊","✋","✌️"][i]} ${v}</button>`).join("")}
+ <div id="rpsResult" class="result">منتظر انتخاب تو هستم.</div>`;
+ window.playRPS=v=>{
+ if(window.gameFinished)return;
+ let c=Math.floor(Math.random()*3),names=["سنگ","کاغذ","قیچی"];
+ let result=v===c?"مساوی!":(v-c+3)%3===1?"بردی!":"باختی!";
+ document.getElementById("rpsResult").innerHTML=`تو: ${names[v]}<br>کامپیوتر: ${names[c]}<br><b>${result}</b>`;
+ finish(result==="بردی!"?10:0,result);
+ };
+}
+function ticGame(){
+ let board=Array(9).fill(""),over=false;
+ document.getElementById("gameArea").innerHTML=`
+ <p>تو X هستی؛ کامپیوتر O است.</p>
+ <div class="board" id="ticBoard"></div>
+ <div id="ticResult" class="result">نوبت توست!</div>`;
+ function draw(){
+ document.getElementById("ticBoard").innerHTML=board.map((v,i)=>`<button onclick="ticMove(${i})">${v}</button>`).join("");
+ }
+ window.ticMove=i=>{
+ if(over||board[i]||window.gameFinished)return;
+ board[i]="X";
+ if(win("X")){over=true;end("بردی!",10);return}
+ if(board.every(Boolean)){over=true;end("مساوی شد!",2);return}
+ let free=board.map((v,i)=>v?null:i).filter(v=>v!==null);
+ if(free.length)board[free[Math.floor(Math.random()*free.length)]]="O";
+ if(win("O")){over=true;end("کامپیوتر برد!",0);return}
+ if(board.every(Boolean)){over=true;end("مساوی شد!",2);return}
+ draw();
+ };
+ function win(p){
+ return [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]].some(a=>a.every(i=>board[i]===p));
+ }
+ function end(t,s){draw();document.getElementById("ticResult").textContent=t;finish(s,t)}
+ draw();
+}
+function memoryGame(){
+ const icons=["🍎","🍋","🍇","🍒","🍉","🥝","🍍","🥑"];
+ let arr=[...icons,...icons].sort(()=>Math.random()-.5),open=[],done=0,lock=false;
+ document.getElementById("gameArea").innerHTML=`
+ <p>کارت‌های مشابه رو پیدا کن.</p>
+ <div class="memory-grid" id="memoryGrid"></div>
+ <div id="memoryInfo" class="result">جفت‌های پیدا شده: ۰ از ۸</div>`;
+ const draw=()=>{
+ document.getElementById("memoryGrid").innerHTML=arr.map((v,i)=>
+ `<button class="${open.includes(i)||arr[i]===null?"open":""}" onclick="flipCard(${i})">${arr[i]===null?"✓":open.includes(i)?v:"?"}</button>`).join("");
+ };
+ window.flipCard=i=>{
+ if(lock||open.includes(i)||arr[i]===null||window.gameFinished)return;
+ open.push(i);draw();
+ if(open.length===2){
+ lock=true;
+ if(arr[open[0]]===arr[open[1]]){
+ arr[open[0]]=null;arr[open[1]]=null;done++;open=[];lock=false;
+ document.getElementById("memoryInfo").textContent=`جفت‌های پیدا شده: ${fa(done)} از ۸`;
+ draw();if(done===8)finish(50,"همه جفت‌ها رو پیدا کردی!");
+ }else setTimeout(()=>{open=[];lock=false;draw()},800);
+ }
+ };
+ draw();
+}
+function reactionGame(){
+ document.getElementById("gameArea").innerHTML=`
+ <p>روی دکمه بزن و منتظر سبز شدنش باش. زودتر از آن کلیک نکنی!</p>
+ <button id="reactionBtn" style="width:100%;height:130px;background:#777" onclick="reactionClick()">شروع</button>
+ <div id="reactionResult" class="result">آماده‌ای؟</div>`;
+ let state="ready",start=0;
+ window.reactionClick=()=>{
+ if(window.gameFinished)return;
+ const b=document.getElementById("reactionBtn");
+ if(state==="ready"){
+ state="wait";b.textContent="صبر کن...";b.style.background="#d97706";
+ reactionTimeout=setTimeout(()=>{
+ state="go";start=performance.now();b.style.background="#16a34a";b.textContent="حالا کلیک کن!";
+ },1000+Math.random()*3500);
+ }else if(state==="wait"){
+ clearTimeout(reactionTimeout);state="ready";b.style.background="#777";b.textContent="شروع دوباره";
+ document.getElementById("reactionResult").textContent="زود کلیک کردی! دوباره تلاش کن.";
+ }else if(state==="go"){
+ let ms=Math.round(performance.now()-start);state="ready";b.style.background="#777";b.textContent="دوباره";
+ document.getElementById("reactionResult").textContent=`زمان واکنش: ${fa(ms)} میلی‌ثانیه`;
+ finish(Math.max(0,100-Math.floor(ms/10)),`زمان واکنش: ${ms}ms`);
+ }
+ };
+}
+function diceGame(){
+ document.getElementById("gameArea").innerHTML=`
+ <div class="big" id="dice">🎲</div><button onclick="rollDice()">انداختن تاس</button>
+ <div id="diceResult" class="result">تاس رو بنداز!</div>`;
+ window.rollDice=()=>{
+ if(window.gameFinished)return;
+ let n=Math.floor(Math.random()*6)+1;
+ document.getElementById("dice").textContent=["","⚀","⚁","⚂","⚃","⚄","⚅"][n];
+ document.getElementById("diceResult").textContent="عدد تو: "+fa(n);
+ finish(n*10,"نتیجه تاس: "+n);
+ };
+}
+function coinGame(){
+ document.getElementById("gameArea").innerHTML=`
+ <p>حدس بزن شیر میاد یا خط.</p>
+ <button onclick="flipCoin('شیر')">🦁 شیر</button>
+ <button onclick="flipCoin('خط')">🪙 خط</button><div id="coinResult" class="result"></div>`;
+ window.flipCoin=v=>{
+ if(window.gameFinished)return;
+ let r=Math.random()<.5?"شیر":"خط";
+ document.getElementById("coinResult").textContent="نتیجه: "+r;
+ finish(v===r?20:0,v===r?"درست حدس زدی!":"این بار نشد!");
+ };
+}
+function mathGame(){
+ let a=Math.floor(Math.random()*30)+2,b=Math.floor(Math.random()*30)+2,op=Math.random()<.5?"+":"×",ans=op==="+"?a+b:a*b;
+ document.getElementById("gameArea").innerHTML=`
+ <div class="big">${a} ${op} ${b} = ؟</div>
+ <input id="mathAnswer" type="number" placeholder="جواب">
+ <button onclick="checkMath()">بررسی</button><div id="mathResult" class="result"></div>`;
+ window.checkMath=()=>{
+ if(window.gameFinished)return;
+ let ok=Number(document.getElementById("mathAnswer").value)===ans;
+ document.getElementById("mathResult").textContent=ok?"آفرین، جواب درسته!":"جواب درست: "+ans;
+ finish(ok?20:0,ok?"درست جواب دادی!":"جواب درست "+ans+" بود.");
+ };
+}
+function colorGame(){
+ let colors=[["قرمز","#ef4444"],["آبی","#3b82f6"],["سبز","#22c55e"],["زرد","#eab308"],["بنفش","#a855f7"],["صورتی","#ec4899"]];
+ let target=colors[Math.floor(Math.random()*colors.length)];
+ document.getElementById("gameArea").innerHTML=`
+ <p>کدام گزینه رنگ زیر است؟</p>
+ <div style="height:75px;border-radius:15px;background:${target[1]}"></div>
+ ${[...colors].sort(()=>Math.random()-.5).map(c=>`<button onclick="colorAnswer('${c[0]}')">${c[0]}</button>`).join("")}
+ <div id="colorResult" class="result"></div>`;
+ window.colorAnswer=v=>{
+ if(window.gameFinished)return;
+ let ok=v===target[0];document.getElementById("colorResult").textContent=ok?"درست بود!":"رنگ درست: "+target[0];
+ finish(ok?20:0,ok?"آفرین!":"پاسخ صحیح "+target[0]+" بود.");
+ };
+}
+function typingGame(){
+ const words=["زیورا","سرگرمی","برنامه نویسی","بازی آنلاین","هوش مصنوعی","خلاقیت"];
+ let word=words[Math.floor(Math.random()*words.length)],started=0;
+ document.getElementById("gameArea").innerHTML=`
+ <p>این عبارت رو تایپ کن:</p><div class="big">${word}</div>
+ <input id="typingInput" placeholder="اینجا تایپ کن..." oninput="checkTyping()">
+ <div id="typingResult" class="result">آماده‌ای؟</div>`;
+ window.checkTyping=()=>{
+ if(window.gameFinished)return;
+ let input=document.getElementById("typingInput");
+ if(!started)started=Date.now();
+ if(input.value===word){
+ let sec=(Date.now()-started)/1000;
+ document.getElementById("typingResult").textContent=`زمان: ${sec.toFixed(2)} ثانیه`;
+ finish(Math.max(0,100-Math.floor(sec*5)),"کلمه رو درست تایپ کردی!");
+ }
+ };
+}
+
+const funData={
+ personality:["ماجراجو","متفکر","خلاق","آرام","رقابت‌جو","ماجراجوی فضایی"],
+ truth:["آخرین باری که خندیدی کی بود؟","اگر یک قدرت داشتی چی انتخاب می‌کردی؟","بامزه‌ترین اتفاق زندگیت چی بوده؟"],
+ scenario:["یک روز با قدرت پرواز بیدار می‌شی!","همه آدم‌ها صدای افکارت رو می‌شنون!","یک ربات جای تو زندگی می‌کنه!"],
+ choice:["پرواز یا نامرئی شدن؟","زندگی در فضا یا زیر دریا؟","یک میلیارد پول یا یک قدرت جادویی؟"],
+ name:["پفک فضایی","ژنرال خیار","استاد سیب‌زمینی","کاپیتان خنده","دکتر موز"],
+ fortune:["امروز یک اتفاق جالب در انتظارت است!","یک ایده تازه پیدا خواهی کرد!","امروز زمان امتحان کردن یک چیز جدیده!"],
+ luck:["۸۷٪","۴۲٪","۹۹٪","۶۵٪","۲۳٪","۷۵٪"],
+ job:["فضانورد","طراح بازی","کارآگاه","مخترع","شکارچی اژدها"],
+ planet:["سیاره بنفش‌ها","مریخ ۲","سیاره شکلات","کهکشان خنده"],
+ power:["توقف زمان برای ۵ ثانیه","صحبت با حیوانات","تبدیل شدن به نور","تلپورت"],
+ food:["پیتزای شکلاتی","بستنی ترش","ساندویچ فضایی","سیب‌زمینی با عسل"],
+ animal:["روباه","دلفین","گرگ","گربه فضایی","اژدهای کوچک"],
+ group:["ارتش پفک‌ها","افسانه‌های خنده","گروه فضایی","تیم نینجاها"],
+ excuse:["اینترنت ذهنم قطع شده بود!","گربه‌ام دکمه‌ها رو زد!","زمان از دستم فرار کرد!"],
+ time:["سال ۲۵۰۰","عصر دایناسورها","صد سال آینده","دوران اختراع اینترنت"],
+ friend:["دوستی که همیشه می‌خندونه","دوستی که نابغه است","دوستی که اهل ماجراجوییه"],
+ mars:["اولین کافه روی مریخ رو باز می‌کنی!","با فضایی‌ها فوتبال بازی می‌کنی!","یک شهر فضایی می‌سازی!"],
+ mind:["خواندن فکر گربه‌ها","حافظه بی‌نهایت","دیدن آینده نزدیک"],
+ risk:["خیلی شجاع","متعادل","بااحتیاط","ماجراجوی حرفه‌ای"],
+ nickname:["بتمن پفکی","سلطان پاستیل","ژنرال خنده","کاپیتان شب"],
+ room:["اتاقی در فضا","اتاق جنگلی","اتاق گیمینگ","اتاق زیر آب"],
+ island:["چاقو","چراغ قوه","کتاب","یک ربات","قایق"],
+ movie:["قهرمان کمدی","کارآگاه مخفی","فضانورد","جادوگر"],
+ color:["بنفش","آبی اقیانوسی","نارنجی آتشین","سبز نئونی"],
+ magic:["تبدیل آب به شکلات","احضار پیتزا","ساخت ابرهای رنگی"],
+ travel:["ژاپن","ماه","جنگل اسرارآمیز","شهر زیر آب"],
+ creature:["اژدهای مهربان","ققنوس آبی","گربه نامرئی"],
+ funny:["اگر یخچال حرف می‌زد چی می‌گفت؟","اگر گربه‌ها رئیس دنیا بودند؟","اگر زمین مکعب بود؟"],
+ robot:["Z-BOT","ممد 3000","ربات پفکی","ZY-X"],
+ decision:["امروز یک چیز تازه یاد بگیر!","یک بازی جدید امتحان کن!","به یک دوست زنگ بزن!"]
+};
+function openFun(i){
+ const f=funs[i];
+ openPanel(f[1]+" "+f[0],`
+ <p>${f[2]}</p><div class="big">${f[1]}</div>
+ <button class="action" onclick="generateFun(${i})">نتیجه رو نشون بده!</button>
+ <div id="funResult" class="result">آماده‌ای؟</div>`);
+ window.generateFun=i=>{
+ const v=funData[funs[i][3]]||["یک نتیجه جالب!"];
+ document.getElementById("funResult").textContent="✨ "+v[Math.floor(Math.random()*v.length)];
+ };
+}
+function resetStats(){
+ if(confirm("آمار بازی‌ها پاک شود؟")){
+ stats={played:0,best:0};saveStats();toast("آمار پاک شد.");
+ }
+}
+</script>
+</body>
+</html>
